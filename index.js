@@ -1,4 +1,5 @@
-const readline = require("readline");
+import readline from "readline";
+import chalk from "chalk";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -102,12 +103,12 @@ function displaySchedule(schedule) {
 }
 
 function playGame() {
-  console.log("Welcome to the Process Management Simulation Game!");
-  console.log("Available scheduling algorithms:");
-  console.log("1. HRRN (Highest Response Ratio Next)");
-  console.log("2. SRT (Shortest Remaining Time)");
-  console.log("3. SJF (Shortest Job First)");
-  console.log("4. FIFO (First In, First Out)");
+  console.log(chalk.bold.redBright("\n\nWelcome to the Process Management Simulation Game!"));
+  console.log(chalk.bold.blue("Available scheduling algorithms:"));
+  console.log(chalk.bold.greenBright("1. HRRN (Highest Response Ratio Next)"));
+  console.log(chalk.bold.white("2. SRT (Shortest Remaining Time)"));
+  console.log(chalk.bold.cyanBright("3. SJF (Shortest Job First)"));
+  console.log(chalk.bold.magenta("4. FIFO (First In, First Out)"));
 
   rl.question("Choose a scheduling algorithm (1-4): ", choice => {
     let schedule;
